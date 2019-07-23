@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}User List {% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% for user in users %}
+            <div class="row">
+                <div class="col-4">{{ user.username }}</div>
+                <div class="col-4">{{ user.password }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}User Maintenance {% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form action="" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" class="form-control" placeholder="What should we call you">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input id="email" name="email" type="email" class="form-control" placeholder="Any E-mail we can use to contact you?">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" class="form-control" placeholder="Let's keep this a secret">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
+    </div>
+{% endblock %}

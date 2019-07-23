@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+
+{% block content %}
+    <div class="container p-1 mt-2">
+            <form action="" method="POST">
+                <div class="form-group">
+                    <input id="title" name="title" type="text" class="form-control form-control-sm" placeholder="Post Title">
+                </div>
+                <div class="form-group">
+                    <textarea id="content" name="content" class="form-control form-control-sm" placeholder="Content"></textarea>
+                </div>
+                <button class="btn btn-primary btn-block">Post</button>
+            </form>
+        <hr>
+    </div>
+
+    {% for post in posts %}
+        <div class="container mt-2">
+            <div class="p-1">
+                <div class="font-weight-bold">{{ post.title }}&nbsp;<small class="font-italic">By {{ post.author.username }} at {{ post.date_created.strftime('%B %d, %Y %I:%M %p') }}</small></div>
+                <div class="border border-dark pl-4 pr-4 pt-1" style="min-height:100px;">{{ post.content }}</div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
